@@ -8,6 +8,7 @@ COPY /src/* /app/
 RUN chmod +x /app/app.sh
 RUN chmod +x /app/slack.sh
 RUN chmod +x /app/start.sh
+RUN chmod +x /app/restore.sh
 
 WORKDIR /app
 CMD [ "/app/start.sh" ]
