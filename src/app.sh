@@ -12,11 +12,10 @@ NAMES=${NAMES[$RANDOM % ${#NAMES[@]}]}
 echo "Début de la Sauvegarde"
 DATE=$(date +%Y%m%d_%H%M%S)
 
-MONGO_HOST=${MONGO_HOST:-mongo}
+MONGO_HOST=${MONGO_HOST:-localhost}
 MONGO_PORT=${MONGO_PORT:-27017}
 
-
-mongodump -h $MONGO_HOST -p $MONGO_PORT
+mongodump -h $MONGO_HOST -p $MONGO_PORT -u ${MONGO_USER} -p ${MONGO_PASSWORD} -d ${MONGO_DATABASE}
 
 tar zcvf save$DATE.tar.gz dump/
 rm -rf dump/
