@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MONGO_HOST=${MONGO_HOST:-localhost}
+MONGO_HOST=${MONGO_HOST:-mongo}
 MONGO_PORT=${MONGO_PORT:-27017}
 
 read -p 'Nom de la save sur ftp/backup : ' FILE
